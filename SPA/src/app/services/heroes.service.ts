@@ -64,6 +64,28 @@ private heroes:any[] = [
   getHeroes(){
     return this.heroes;
   }
+
+  getHeroe( idx:any ) {
+    if( idx*1 >= 0 && idx*1 <= this.heroes.length) {
+      return this.heroes[idx];
+    } else {
+      console.log("Id incorrecto");
+    }
+
+  }
+
+  buscarHeroes( termino:string ):Heroe[] {
+
+    let heroesArr:Heroe[] = [];
+    termino = termino.toLowerCase();
+
+    this.heroes.map((x) => x.nombre.toLowerCase().indexOf(termino) != -1 ? heroesArr.push(x) : '');
+    console.log(heroesArr);
+    return heroesArr;
+  }
+
+
+
 }
 
 
